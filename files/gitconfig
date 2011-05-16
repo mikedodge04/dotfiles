@@ -1,0 +1,77 @@
+### Visitors!
+### Please borrow freely from this config, but make sure to change
+### the [user] section to your info
+
+[user]
+  name = Ryan Patterson
+  email = cgamesplay@cgamesplay.com
+
+[core]
+  excludesfile = ~/.gitignore
+  whitespace = trailing-space,space-before-tab
+  pager = less
+
+### colors are meant for a dark terminal
+[color]
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+[color "branch"]
+  current = white blue bold
+  local  = blue
+  remote = green
+[color "diff"]
+  plain = reset
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = green
+  whitespace = red blink
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[alias]
+  br = branch
+  bg = bisect good
+  bb = bisect bad
+  co = checkout
+  amend = commit --amend
+  ci = commit
+  st = status
+  cp = cherry-pick
+  graph = log --oneline --graph --decorate
+
+[svn]
+  followparent = true
+  rmdir = true
+
+[commit]
+[log]
+  date = relative
+[format]
+  # This is (almost) the same as medium (the default) but it uses commit dates
+  pretty = tformat:"%C(yellow)commit %H%Creset%nCommitter: %cN <%cE>%nDate:      %cd%n%n%w(0,4,4)%s%n%n%b"
+[blame]
+  date = short
+[diff]
+  renames = true
+  mnemonicprefix = true
+[apply]
+  whitespace = strip
+[merge]
+  tool = emerge
+[status]
+  relativePaths = false
+[web]
+  browser = lynx
+[rebase]
+  stat = true
+## for perf reasons (sad), don't add the index-dirtiness state to bash PS1
+[bash]
+  showDirtyState = false
+[rerere]
+  enabled = 1

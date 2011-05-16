@@ -1,0 +1,20 @@
+ForwardAgent yes
+
+# Allow multiplexing of SSH connections
+# Choose the master connection manually (ss in bashrc does this)
+ControlMaster no
+ControlPath /tmp/ssh_mux_%h_%p_%r
+
+Host playground
+  Hostname playground.wooters.us
+  User cgames
+
+Host office
+  Hostname office.cgamesplay.com
+  User cgames
+
+Host mc.cgamesplay.com
+  User ec2-user
+  IdentityFile ~/.ssh/keys/minecraftserver.pem
+
+# vim: ft=config
