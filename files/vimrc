@@ -92,8 +92,8 @@ endif
 augroup initial_winsize " {{{
   au!
   " Initial window size. 171 is just wide enough for 2 vertical splits of 80
-  " columns plus chrome
-  au GUIEnter * :set columns=171 lines=45
+  " columns plus chrome. 999 is quite tall.
+  au GUIEnter * :set columns=171 lines=999
 augroup END " }}}
 
 " Resize my window to fit 3 columns of 81 columns with 4 gutter columns each
@@ -169,6 +169,9 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " }}}
 
 " Shortcuts (maps) {{{
+
+" Toggle fullscreen mode on command-enter
+map <silent> <D-CR> :set fullscreen!<CR>
 
 " Q normally switches to ex mode, but I don't use that
 map Q gq
