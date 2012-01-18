@@ -2,6 +2,8 @@
 
 " Basic setup {{{
 
+" vim: foldmethod=marker
+
 set nocompatible
 filetype off
 " Load other plugins
@@ -69,6 +71,9 @@ if version >= 703
   " Display a line at the 81st column
   set colorcolumn=+1
 end
+
+" Highlight tab literals and trailing spaces
+set list listchars=tab:\ \ ,trail:\ 
 
 " }}}
 
@@ -219,35 +224,9 @@ endif
 
 augroup insert_trailingspace " {{{
   au!
-  " Highlight trailing spaces as an error
-  hi link trailsp ErrorMsg
-  au BufWinEnter * syn match trailsp /\s\+$/ containedin=ALL
-
-  " Disable the highlighting as I'm typng it.
-  au InsertEnter * syn clear trailsp | syn match trailsp /\s\+\%#\@<!$/ containedin=ALL
-  au InsertLeave * syn clear trailsp | syn match trailsp /\s\+$/ containedin=ALL
 
   " Remove trailing spaces when leaving insert mode
   au InsertLeave * '[,']s/\s\+$//e|normal `^
-augroup END " }}}
-
-augroup littab " {{{
-  au!
-
-  function! Littab_show()
-    if &ft == "gitcommit" || &ft == "help"
-      return
-    endif
-    syn clear littab
-    syn match littab /\t/ containedin=ALL
-  endfu
-
-  " Facebook hates tabs
-  hi link littab ErrorMsg
-  au BufWinEnter * call Littab_show()
-
-  " git uses tabs, let's allow this.
-  au FileType gitcommit syn clear littab
 augroup END " }}}
 
 augroup jump_to_last_pos " {{{
