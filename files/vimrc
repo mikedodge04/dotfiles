@@ -136,7 +136,11 @@ set pastetoggle=<F2>
 " inoremap <Down> <Nop>
 
 " Enter command mode by pressing ; instead of :
-nnoremap ; :
+noremap ; :
+
+" I don't really use space, and have , and ; remapped
+noremap <Space> ;
+noremap <S-Space> ,
 
 " Exit insert mode by typing jk. Trust me, you never need to type jk.
 inoremap jk <Esc>
@@ -171,16 +175,16 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " Shortcuts (maps) {{{
 
 " Toggle fullscreen mode on command-enter
-map <silent> <D-CR> :set fullscreen!<CR>
+nmap <silent> <D-CR> :set fullscreen!<CR>
 
 " Q normally switches to ex mode, but I don't use that
 map Q gq
 
 " ,/ will turn off search highlighting until you search again.
-map <silent> <leader>/ :nohlsearch<CR>
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " FSwitch
-map <leader>s :FSHere<CR>
+nmap <leader>s :FSHere<CR>
 
 " Ggrep (fugitive) current word
 map <leader>g :Ggrep '<C-r><C-w>'<CR>
@@ -188,10 +192,10 @@ map <leader>g :Ggrep '<C-r><C-w>'<CR>
 " "Fold tag", useful for XML/HTML
 nnoremap <leader>ft Vatzf
 
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-        \ | wincmd p | diffthis
+" Flush Command-T and open it
+nmap <leader>f :CommandTFlush<CR>:CommandT<CR>
+" ... and since we did that we have to manually do that main mapping
+nmap <leader>t :CommandT<CR>
 
 " }}}
 
