@@ -35,7 +35,7 @@
   untracked = cyan
 
 [alias]
-  br = branch
+  br = branch -vv
   bg = bisect good
   bb = bisect bad
   co = checkout
