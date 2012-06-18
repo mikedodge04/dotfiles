@@ -80,7 +80,7 @@ set list listchars=tab:\ \ ,trail:\
 " Pretty display settings (colors, GUI) {{{
 
 " Main color settings
-set guifont=Anonymous_Pro:h13
+set guifont=Anonymous_Pro:h11
 set background=light
 colors solarized
 
@@ -287,6 +287,12 @@ augroup ft_cfolding " {{{
   au FileType javascript,java,c,php,css setlocal foldmethod=marker
   au FileType javascript,java,c,php,css setlocal foldmarker={,}
   au FileType javascript,java,c,php,css setlocal foldlevel=999
+augroup END " }}}
+
+augroup ft_python " {{{
+  au!
+
+  au FileType python setlocal sw=4 sts=4 ts=4
 augroup END " }}}
 
 " }}}

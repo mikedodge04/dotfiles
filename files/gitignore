@@ -1,5 +1,6 @@
 tags
 *.swp
 *.pyc
-*.xcodeproj/xcuserdata/
+xcuserdata/
 *.xcodeproj/project.xcworkspace/
+.DS_Store
