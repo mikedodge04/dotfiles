@@ -22,6 +22,6 @@
 [submodule "files/vim/bundle/vim-arcanist"]
 	path = files/vim/bundle/vim-arcanist
 	url = git://github.com/phleet/vim-arcanist.git
-[submodule "bundle/ctrlp.vim"]
-	path = bundle/ctrlp.vim
+[submodule "files/vim/bundle/ctrlp.vim"]
+	path = files/vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
