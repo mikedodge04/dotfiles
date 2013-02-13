@@ -193,10 +193,7 @@ map <leader>g :Ggrep '<C-r><C-w>'<CR>
 " "Fold tag", useful for XML/HTML
 nnoremap <leader>ft Vatzf
 
-" Flush Command-T and open it
-nmap <leader>f :CommandTFlush<CR>:CommandT<CR>
-" ... and since we did that we have to manually do that main mapping
-nmap <leader>t :CommandT<CR>
+nmap <C-B> :CtrlPBuffer<CR>
 
 " Split the buffer or window left, right, up, or down
 nmap <leader>sh  :leftabove  vnew<CR>
