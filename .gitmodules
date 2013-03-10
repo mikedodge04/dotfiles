@@ -25,3 +25,6 @@
 [submodule "files/vim/bundle/rename.vim"]
 	path = files/vim/bundle/rename.vim
 	url = https://github.com/danro/rename.vim.git
+[submodule "files/vim/bundle/vim-less"]
+	path = files/vim/bundle/vim-less
+	url = git@github.com:groenewege/vim-less.git
