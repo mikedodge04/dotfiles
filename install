@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+
+SOURCE = $(CURDIR)/files
+TARGET = $(HOME)
+
+# Files to link directly
+LINK_FILES := $(notdir $(shell find $(SOURCE) -maxdepth 1 -type f)) oh-my-zsh
+# Link contents of these directories
+LINK_DIRS = vim ssh config/fish
+
+# Assemble source and destination file lists
+LINK_FILES_dest := $(addprefix $(TARGET)/.,$(LINK_FILES))
+LINK_DIRS_src := $(wildcard $(addsuffix /*,$(addprefix $(SOURCE)/,$(LINK_DIRS))))
+LINK_DIRS_dest := $(LINK_DIRS_src:$(SOURCE)/%=$(TARGET)/.%)
+
+.PHONY: install uninstall
+
+install: $(LINK_FILES_dest) $(LINK_DIRS_dest)
+
+uninstall:
+	rm -i $(LINK_FILES_dest) $(LINK_DIRS_dest)
+
+# Main rule
+$(TARGET)/.%: $(SOURCE)/%
+	mkdir -p $(dir $@)
+	ln -s $^ $@
