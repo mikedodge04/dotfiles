@@ -28,3 +28,6 @@
 [submodule "files/vim/bundle/vim-less"]
 	path = files/vim/bundle/vim-less
 	url = git@github.com:groenewege/vim-less.git
+[submodule "files/vim/bundle/vim-fish"]
+	path = files/vim/bundle/vim-fish
+	url = https://github.com/dag/vim-fish.git

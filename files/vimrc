@@ -17,6 +17,9 @@ filetype plugin indent on
 
 " Plugin stuff {{{
 
+" Necessary to fix up vim system() calls.
+set shell=/bin/sh
+
 " Read man pages with :Man
 runtime ftplugin/man.vim
 
@@ -80,7 +83,7 @@ set list listchars=tab:\ \ ,trail:\
 " Pretty display settings (colors, GUI) {{{
 
 " Main color settings
-set guifont=Anonymous_Pro:h11
+set guifont=Anonymous_Pro:h13
 set background=light
 colors solarized
 
